@@ -14,7 +14,7 @@ public class main {
         System.out.println(Arrays.toString(numbers));
         arr.delete(numbers,0);
         System.out.println(Arrays.toString(numbers));
-        
+
 
 
 }}
