@@ -5,7 +5,9 @@ import java.util.Arrays;
 public class main {
     public static void main(String[] args) {
        array  arr=new array();
-    int numbers[]={1,2,3,4,5};
+    int numbers[]={1,2,3,4,5,88,7,50,4};
+    Arrays.sort(numbers);
+    //arr.Traversal(numbers);
     int num[]={2,3,4,5,6};
 //        arr.Traversal(numbers);
 //        arr.Traversal2(numbers);
@@ -15,13 +17,19 @@ public class main {
 //        System.out.println(Arrays.toString(numbers));
 //        arr.delete(numbers,2);
 //        System.out.println(Arrays.toString(numbers));
-        arr.shiftr_insert(num,1);
-        System.out.println(Arrays.toString(numbers));
-//        int result=arr.linearSearch(numbers,6);
-//        if (result!=-1)
-//        System.out.println("vlaue is found at index:"+result);
-//        else
-//            System.out.println("vlaue is not found" );
+//        arr.shiftr_insert(num,1);
+//        System.out.println(Arrays.toString(numbers));
+        int result1=arr.linearSearch(num,4);
+        if (result1!=-1)
+            System.out.println("vlaue is found at index:"+result1);
+        else
+            System.out.println("vlaue is not found" );
+
+        int result=arr.binarySearch(numbers,5,0,numbers.length-1);
+        if (result!=-1)
+        System.out.println("vlaue is found at index:"+result);
+        else
+            System.out.println("vlaue is not found" );
 
 
 

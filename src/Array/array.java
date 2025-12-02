@@ -51,7 +51,36 @@ public class array {
             if(svalue==a[i])
                 return i;
         }
-        return -1;
+        return -1;    }
+
+    public int binarySearch(int []a,int svalue,int findex,int lindex){
+        while (findex<=lindex){
+            int mid=(findex+lindex)/2;
+            if(a[mid]==svalue)
+                return mid;
+            if(svalue>a[mid])
+                findex=mid+1;
+            if (svalue<a[mid])
+                lindex=mid-1;
+
+
+               }return -1;
+    }
+
+    public int binarySearch(int []a,int svalue){
+        int findex=0;
+        int lindex=a.length-1;
+        while (findex<=lindex){
+            int mid=(findex+lindex)/2;
+            if(a[mid]==svalue)
+                return mid;
+            if(svalue>a[mid])
+                findex=mid+1;
+            if (svalue<a[mid])
+                lindex=mid-1;
+
+
+        }return -1;
     }
 
 
