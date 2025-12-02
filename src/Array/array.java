@@ -35,15 +35,14 @@ public class array {
     public void shiftleft_delet(int []a,int index) {
         for (int i = index; i < a.length - 1; i++)
             a[i] = a[i + 1];
-//HomeWork
         a[a.length-1]=Integer.MIN_VALUE;}
+    //HomeWork
+
     public void shiftr_insert(int []a,int value){
 
         for (int i =a.length-1; i > 0 ; i--){
 
             a[i] = a[i -1];
-
-
         }a[0]=value;
     }
 
