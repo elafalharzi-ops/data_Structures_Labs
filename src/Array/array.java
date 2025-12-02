@@ -21,10 +21,46 @@ public class array {
             a[i]=scanner.nextInt();
     }
     public void update(int []a,int index,int nvalue){
-        a[index]=nvalue;
+        if(index<0 || index>=a.length)
+            System.out.println("index does not exists");
+        else
+         a[index]=nvalue;
     }
     public void delete(int []a, int index){
-        a[index]=0;
+        if(index<0 || index>=a.length)
+            System.out.println("index does not exists");
+        else
+         a[index]=0;
     }
+    public void shiftleft_delet(int []a,int index) {
+        for (int i = index; i < a.length - 1; i++)
+            a[i] = a[i + 1];
+//HomeWork
+        a[a.length-1]=Integer.MIN_VALUE;}
+    public void shiftr_insert(int []a,int value){
+
+        for (int i =a.length-1; i > 0 ; i--){
+
+            a[i] = a[i -1];
+
+
+        }a[0]=value;
+    }
+
+    public  int linearSearch(int []a, int svalue)  {
+        for(int i=0;i<a.length;i++){
+            if(svalue==a[i])
+                return i;
+        }
+        return -1;
+    }
+
+
+
+
+
+//        shifright_delet_assinment
+
+
 
 }
