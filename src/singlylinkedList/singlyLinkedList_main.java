@@ -10,7 +10,10 @@ public class singlyLinkedList_main {
         list.addFrist(5);
         Integer last=list.getlast();
         System.out.println(last);
+        list.addatposition(6,2);
         list.display();
+
+
 
     }
 

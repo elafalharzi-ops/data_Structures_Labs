@@ -78,11 +78,22 @@ public class singlyLinkedList <E>{
         if (position==1){
             addFrist(data);
         return;}
+        else {
+            Node<E> newnod=new Node<E>(null,data);
+            Node<E> temp=head;
+            int count=1;
+            while (count<position-1){
+                temp=temp.getNext();
+                count++;
+            }
+            newnod.setNext(temp.getNext());
+            temp.setNext(newnod);
+            if(newnod.getNext()==null){
+                tail=newnod;
+            }
+            size++;
+        }
     }
-
-
-
-
 
 
 
