@@ -3,54 +3,89 @@ package circuler_linkedList;
 
 public class circuler_linkedList<E> {
     private Node<E> tail;
-    private  int size;
+    private int size;
 
     public circuler_linkedList() {
         this.tail = null;
         this.size = 0;
     }
 
-    public int size(){
+    public int size() {
         return size;
     }
-    public boolean isEmpty(){
-        return size()==0;}
-    public void addfirst(E data){
-        if (isEmpty()){
-            Node<E> newnod= new Node<E>(null,data);
-            tail=newnod;
+
+    public boolean isEmpty() {
+        return size() == 0;
+    }
+
+    public void addfirst(E data) {
+        if (isEmpty()) {
+            Node<E> newnod = new Node<E>(null, data);
+            tail = newnod;
             newnod.setNext(tail);
-        }else {
-            Node<E> newnod= new Node<E>(tail.getNext(),data);
+        } else {
+            Node<E> newnod = new Node<E>(tail.getNext(), data);
             tail.setNext(newnod);
 
         }
         size++;
     }
-public void addlast(E data){
-        addfirst(data);
-        tail=tail.getNext();
-}
 
-public E getfrist(){
-        if(isEmpty())return null;
+    public void addlast(E data) {
+        addfirst(data);
+        tail = tail.getNext();
+    }
+
+    public E getfrist() {
+        if (isEmpty()) return null;
         return tail.getNext().getData();
-}
-public E getlast(){
-    if(isEmpty())return null;
-    return tail.getData();
-}
-public E removeFirst(){
-        if (isEmpty())return null;
-        E delet=tail.getNext().getData();
-        if(tail==tail.getNext()){
-           tail=null;
-        }else {
+    }
+
+    public E getlast() {
+        if (isEmpty()) return null;
+        return tail.getData();
+    }
+
+    public E removeFirst() {
+        if (isEmpty()) return null;
+        E delet = tail.getNext().getData();
+        if (tail == tail.getNext()) {
+            tail = null;
+        } else {
             tail.setNext(tail.getNext().getNext());
-        }size--;
+        }
+        size--;
         return delet;
-}
-//display
+    }
+
+    public void display(){
+    Node<E> temp = tail.getNext();
+    do
+
+    {
+        System.out.print(temp.getData() + "--->");
+        temp = temp.getNext();
+
+    }while(temp!=tail.getNext());
+    System.out.print("go first("+temp.getData()+")");
+    }
+    public E removelast() {
+        if (isEmpty()) return null;
+        E delet = tail.getData();
+        if (tail == tail.getNext()) {
+            tail = null;
+        } else {
+            Node<E> temp = tail.getNext();
+            while (temp.getNext() != tail) {
+                temp = temp.getNext();
+            }
+            temp.setNext(tail.getNext());
+            tail = temp;
+        }
+        size--;
+        return delet;
+
+    }
 
 
 
@@ -79,4 +114,5 @@ public E removeFirst(){
             this.next = next;
         }
     }
+
 }
