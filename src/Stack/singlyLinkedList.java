@@ -1,6 +1,6 @@
-package singlylinkedList;
+package Stack;
 
-public class singlyLinkedList <E>{
+public class singlyLinkedList<E>{
 
     private Node<E> head;
     private Node<E>tail;
@@ -30,9 +30,7 @@ public class singlyLinkedList <E>{
         if(size()==0)
             tail=head;
         size--;
-
         return delet;
-
 
 
     }public  void addlast(E data){

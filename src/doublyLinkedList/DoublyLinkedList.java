@@ -23,6 +23,51 @@ public class DoublyLinkedList<E> {
     public E getlast(){
 return tailer.getPrev().getData();
     }
+    private void addBetween(Node<E> left,E data,Node<E> right){
+        Node<E> newnod=new Node(left,data,right);
+        left.setNext(newnod);
+        right.setPrev(newnod);
+        size++;
+    }
+    public void addfirst(E data){
+        addBetween(header,data,header.getNext());
+    }
+    public void addlast(E data){
+        addBetween(tailer.getPrev(),data,tailer);
+    }
+    public E remove(Node<E> deletedNod){
+        if (isEmpty())return null;
+        E delet=deletedNod.getData();
+        Node<E> left=deletedNod.getPrev();
+        Node<E> right=deletedNod.getNext();
+        left.setNext(right);
+        right.setPrev(left);
+        size--;
+        return delet;
+    }
+    public E removfrist(){
+        return remove(header.getNext());
+    }
+    public E removelast(){
+        return remove(tailer.getPrev());
+    }
+    public void display(){
+        Node<E> temp=header.getNext();
+        System.out.print("null<-----header<---->");
+        while (temp!= tailer){
+            System.out.print(temp.getData()+"<--->");
+            temp=temp.getNext();
+        }
+        System.out.println("tailer--->null");
+    }
+
+
+
+
+
+
+
+
 
 
 
