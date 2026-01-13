@@ -27,9 +27,10 @@ public class singlyLinkedList <E>{
         if(isEmpty())return null;
         E delet=head.getData();
         head=head.getNext();
+        size--;
         if(size()==0)
             tail=head;
-        size--;
+
 
         return delet;
 
